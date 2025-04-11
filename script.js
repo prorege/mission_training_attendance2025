@@ -16,6 +16,15 @@ let selectedMember = null;
 
 searchInput.addEventListener("input", () => {
   const keyword = searchInput.value.trim();
+
+  // ✅ 검색어가 비어 있으면 전체 출력 방지
+  if (keyword === "") {
+    selectedMember = null;
+    memberInfo.innerHTML = "";
+    checkInButton.disabled = true;
+    return;
+  }
+
   const matched = members.filter((m) => m.이름.startsWith(keyword));
 
   if (matched.length === 1) {
