@@ -35,7 +35,7 @@ searchInput.addEventListener("input", () => {
   } else if (matched.length > 1) {
     selectedMember = null;
     memberInfo.innerHTML = matched.map((m, i) => 
-      `<div class="suggestion" data-index="${i}">${m.이름} <hr> ${m.지역}, ${m.직분}, ${m.부서}</div>`
+      `<div class="suggestion" data-index="${i}">${m.이름} <hr> #${m.지역} #${m.직분} #${m.부서}</div>`
     ).join("");
     checkInButton.disabled = true;
   } else {
