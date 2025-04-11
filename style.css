@@ -5,77 +5,78 @@ body {
   margin: 0;
   padding: 50px 20px;
   color: #fff;
+  font-size: 20px; /* 기본 글자 크기 ↑ */
 }
 
 /* 컨테이너 박스 */
 .container {
-  max-width: 480px;
+  max-width: 520px;
   margin: auto;
   background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(6px);
-  border-radius: 18px;
-  padding: 40px 30px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  padding: 50px 40px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
   text-align: center;
-  border: 1.5px solid #ffffff55;
+  border: 2px solid #ffffff55;
 }
 
 /* 타이틀 */
 h1 {
-  color: #ffe760; /* 옐로우 포인트 */
-  font-size: 24px;
-  margin-bottom: 10px;
+  color: #ffe760;
+  font-size: 36px; /* ↑ */
+  margin-bottom: 15px;
 }
 .container h1::after {
   content: "선교집중훈련";
   display: block;
-  font-size: 20px;
+  font-size: 28px; /* ↑ */
   color: #ffffff;
-  margin-top: 5px;
+  margin-top: 8px;
 }
 
 /* 라벨 */
 label {
   display: block;
   text-align: left;
-  margin-top: 20px;
-  margin-bottom: 6px;
+  margin-top: 30px;
+  margin-bottom: 10px;
   font-weight: 600;
-  font-size: 15px;
+  font-size: 20px; /* ↑ */
   color: #fff;
 }
 
 /* 입력창 및 드롭다운 */
 input[type="text"], select {
   width: 100%;
-  padding: 14px;
-  font-size: 15px;
+  padding: 20px;
+  font-size: 22px; /* ↑ */
   border: 2px solid #8df7f7;
-  border-radius: 8px;
+  border-radius: 10px;
   background: #fff;
   color: #333;
-  margin-bottom: 10px;
+  margin-bottom: 14px;
   box-sizing: border-box;
   transition: all 0.3s;
-  min-height: 30px;
+  min-height: 50px;
 }
 input[type="text"]:focus,
 select:focus {
   outline: none;
-  box-shadow: 0 0 0 2px #ffd700;
+  box-shadow: 0 0 0 3px #ffd700;
 }
 
 /* 버튼 */
 button {
   width: 100%;
-  margin-top: 20px;
-  padding: 14px;
+  margin-top: 30px;
+  padding: 20px;
   background-color: #ffe760;
   color: #5a0089;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 22px; /* ↑ */
   border: none;
-  border-radius: 10px;
+  border-radius: 12px;
   cursor: pointer;
   transition: transform 0.2s, background-color 0.3s;
 }
@@ -92,12 +93,12 @@ button:disabled {
 .suggestion {
   background-color: #fffef0;
   color: #333;
-  padding: 10px 12px;
+  padding: 16px;
   border: 1px solid #ddd;
-  margin-top: 6px;
-  border-radius: 6px;
+  margin-top: 10px;
+  border-radius: 8px;
   text-align: left;
-  font-size: 14px;
+  font-size: 20px; /* ↑ */
   cursor: pointer;
   transition: background-color 0.2s;
 }
@@ -107,20 +108,20 @@ button:disabled {
 
 /* 선택된 멤버 정보 박스 */
 #memberInfo {
-  margin-top: 20px;
-  font-size: 14px;
+  margin-top: 30px;
+  font-size: 20px; /* ↑ */
   background-color: #ffffff10;
-  padding: 14px;
+  padding: 20px;
   border: 3px solid #8df7f7;
-  border-radius: 10px;
+  border-radius: 12px;
   color: #2f0241;
   text-align: left;
-  line-height: 1.6;
+  line-height: 1.8;
 }
 
 /* 메시지 */
 #statusMessage {
-  margin-top: 20px;
-  font-size: 14px;
+  margin-top: 25px;
+  font-size: 20px; /* ↑ */
   color: #fff;
 }
