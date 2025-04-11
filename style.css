@@ -28,7 +28,7 @@ h1 {
   margin-bottom: 15px;
 }
 .container h1::after {
-  content: "선교집중훈련";
+  content: "하이브리드 선교운동";
   display: block;
   font-size: 28px; /* ↑ */
   color: #ffffff;
