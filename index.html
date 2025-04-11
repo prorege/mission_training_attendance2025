@@ -9,16 +9,14 @@
 <body>
   <div class="container">
     <h1>교회 출석부</h1>
-    <input type="text" id="searchInput" placeholder="이름을 입력하세요" />
-    
-    <label for="weekSelect">주차 선택:</label>
+    <label for="weekSelect"></label>
     <select id="weekSelect">
       <option value="1주차">1주차</option>
       <option value="2주차">2주차</option>
       <option value="3주차">3주차</option>
       <option value="4주차">4주차</option>
     </select>
-
+    <input type="text" id="searchInput" placeholder="이름을 입력하세요" />
     <div id="memberInfo"></div>
     <button id="checkInButton" disabled>출석하기</button>
     <p id="statusMessage"></p>
