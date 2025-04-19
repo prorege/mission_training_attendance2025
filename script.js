@@ -1,9 +1,18 @@
 let members = [];
+let messages = {};
 
-fetch("members.json")
+// 멤버 목록 로드
+fetch("members_renewed.json")
   .then((response) => response.json())
   .then((data) => {
     members = data;
+  });
+
+// 메시지 목록 로드
+fetch("messages.json")
+  .then((res) => res.json())
+  .then((data) => {
+    messages = data;
   });
 
 const searchInput = document.getElementById("searchInput");
@@ -14,10 +23,10 @@ const statusMessage = document.getElementById("statusMessage");
 
 let selectedMember = null;
 
+// 🔍 이름 입력 이벤트
 searchInput.addEventListener("input", () => {
   const keyword = searchInput.value.trim();
 
-  // ✅ 검색어가 비어 있으면 전체 출력 방지
   if (keyword === "") {
     selectedMember = null;
     memberInfo.innerHTML = "";
@@ -34,7 +43,7 @@ searchInput.addEventListener("input", () => {
     statusMessage.textContent = "";
   } else if (matched.length > 1) {
     selectedMember = null;
-    memberInfo.innerHTML = matched.map((m, i) => 
+    memberInfo.innerHTML = matched.map((m, i) =>
       `<div class="suggestion" data-index="${i}">${m.이름} <hr> #${m.지역} #${m.직분} #${m.부서}</div>`
     ).join("");
     checkInButton.disabled = true;
@@ -45,6 +54,7 @@ searchInput.addEventListener("input", () => {
   }
 });
 
+// 추천 항목 클릭 이벤트
 memberInfo.addEventListener("click", (e) => {
   if (e.target.classList.contains("suggestion")) {
     const name = e.target.textContent.split(" ")[0];
@@ -54,6 +64,7 @@ memberInfo.addEventListener("click", (e) => {
   }
 });
 
+// 멤버 정보 출력
 function displayMemberInfo(member) {
   return `
     <p><strong>이름:</strong> ${member.이름}</p>
@@ -63,6 +74,7 @@ function displayMemberInfo(member) {
   `;
 }
 
+// 출석 처리
 checkInButton.addEventListener("click", () => {
   if (!selectedMember) return;
   const selectedWeek = weekSelect.value;
@@ -79,6 +91,11 @@ checkInButton.addEventListener("click", () => {
     }),
   });
 
-  statusMessage.textContent = `${selectedWeek} 출석이 기록되었습니다.`;
+  // 💬 외부 메시지 파일에서 해당 ID에 맞는 메시지 불러오기
+  const idStr = String(selectedMember.id);
+  const message = messages[idStr] || messages["default"] || `${selectedWeek} 출석이 완료되었습니다.`;
+
+  alert(message, "출석완료!");
+  // statusMessage.textContent = message;
   checkInButton.disabled = true;
 });
